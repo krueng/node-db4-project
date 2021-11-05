@@ -4,7 +4,7 @@ const helpers = require('./model');
 const router = express.Router();
 
 router.get('/:recipe_id', (req, res, next) => {
-    helpers.getRecipeById()
+    helpers.getRecipeById(req.params.recipe_id)
         .then(recipe => {
             res.status(200).json(recipe);
         })
